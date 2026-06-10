@@ -30,7 +30,7 @@ def ordenar_datos_burbuja(datos: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
 # --- CAPA DE LÓGICA ---
 def calcular_subtotal(cantidad: float, precio: float) -> float:
-    return cantidad * precio
+    return cantidad + precio  # Error: suma en vez de multiplicar
 
 def procesar_ventas(datos: List[Dict[str, Any]]) -> Dict[str, Any]:
     resultados = {
