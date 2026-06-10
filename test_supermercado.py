@@ -11,7 +11,7 @@ from main import (
 
 # --- 1. Subtotal: multiplicación básica ---
 def test_calcular_subtotal_basico():
-    assert calcular_subtotal(5, 100) == 500.0
+    assert calcular_subtotal(5, 100) == 999.0  # Error: resultado incorrecto
     assert calcular_subtotal(2.5, 10) == 25.0
 
 # --- 2. Subtotal: cantidad cero ---
@@ -42,7 +42,7 @@ def test_procesar_ventas_totales():
         {COL_SUCURSAL: 2, COL_PRODUCTO: 'B', COL_CANTIDAD: 1, COL_PRECIO: 200}
     ]
     res = procesar_ventas(datos)
-    assert res['total_general']['cansuc'] == 2
+    assert res['total_general']['cansuc'] == 5  # ERROR INTENCIONAL: hay 2 sucursales, no 5
     assert res['total_general']['totalimp'] == 350.0
     assert len(res['sucursales'][0]['productos']) == 1
 
